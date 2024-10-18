@@ -1,6 +1,4 @@
-
 //detecting button press
-
 var numberOfDrums = document.querySelectorAll(".drum").length;
 
 for (var i = 0; i<numberOfDrums; i++) {
@@ -15,7 +13,6 @@ for (var i = 0; i<numberOfDrums; i++) {
 }
 
 //detecting keyboard press
-
 document.addEventListener("keydown", function(event){
     makeSound(event.key);
     buttonAnimation(event.key);
@@ -57,17 +54,16 @@ function makeSound(key){
             var kick = new Audio("sounds/kick-bass.mp3");
             kick.play();
             break;
-
+            
             default: console.log(buttonInnerHTML);
     }
 }
 
+//adds a button click animation, also works with the key down event
 function buttonAnimation(currentKey){
     var activeButton = document.querySelector("." + currentKey);
     activeButton.classList.add("pressed");    
     setTimeout(function(){
         activeButton.classList.remove("pressed");
     }, 100);
-     
-
 }
